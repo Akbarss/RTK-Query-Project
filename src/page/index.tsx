@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import "react-toastify/dist/ReactToastify.css";
 import { Card, Grid, Stack, Typography } from "@mui/material";
 import { useGetProductsQuery } from "../core/redux/product.api";
+import ProductCard from "../components/Cards/ProductCard/ProductCard";
 
 const HomePage = () => {
   const { data, isLoading, error } = useGetProductsQuery(6);
@@ -12,11 +13,13 @@ const HomePage = () => {
         "Loading"
       ) : (
         <>
-          {data?.map((p) => (
-            <Card sx={{ bgcolor: "red", width: "200px" }}>
-              <Typography>{p.title}</Typography>
-            </Card>
-          ))}
+          <Grid container spacing={3} mb={4}>
+            {data?.map((p) => (
+              <Grid key={p.id} item xs={12} sm={12} md={4}>
+                <ProductCard {...p} />
+              </Grid>
+            ))}
+          </Grid>
         </>
       )}
     </Layout>

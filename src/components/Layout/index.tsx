@@ -19,7 +19,7 @@ const Layout = (props: Props) => {
           <SideBar open={open} />
         </Box>
         <Box className="contaent-bg" width={"100%"} display="flex" justifyContent={"right"}>
-          <Box width={"100%"} sx={{ marginTop: { xs: 9, sm: 10 } }}>
+          <Box width={"100%"} sx={{ marginTop: { xs: 9, sm: 10 } }} p={4}>
             {props.children}
           </Box>
         </Box>
