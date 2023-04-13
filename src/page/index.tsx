@@ -5,7 +5,6 @@ import { useGetProductsQuery } from "../core/redux/product.api";
 
 const HomePage = () => {
   const { data, isLoading, error } = useGetProductsQuery(6);
-  console.log(error);
 
   return (
     <Layout>
