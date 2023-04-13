@@ -35,7 +35,7 @@ const ProductCard = (props: Props) => {
         <Box display={"flex"} justifyContent={"flex-start"} pb={1.9}>
           <Stack bgcolor={"#182444"} p={1} pl={2} pr={2} borderRadius={1.2}>
             <Typography fontWeight={500} color={"#fff"}>
-              {props.category}
+              {props.category.toUpperCase()}
             </Typography>
           </Stack>
         </Box>
