@@ -42,6 +42,7 @@ const Appbar = (props: AppBarProps) => {
         height: 79,
         width: { xs: "100%", md: "100%", mdP: `calc(100% - ${drawerWidth}px)` },
         p: { xs: "2px, 0px", sm: 1.9 },
+        bgcolor: "#182444",
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
@@ -52,7 +53,7 @@ const Appbar = (props: AppBarProps) => {
         </Stack> */}
         <Stack direction={"row"} gap={1} alignItems="center" mt={-1}>
           <IconButton size="large" edge="start" aria-label="menu" sx={{ color: "#06314D" }}>
-            <SettingsOutlinedIcon sx={{ color: "#000" }} />
+            <SettingsOutlinedIcon sx={{ color: "#fff" }} />
           </IconButton>
           <Suspense fallback={"lloading"}>
             <UserMenu />

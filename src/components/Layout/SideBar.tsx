@@ -14,7 +14,7 @@ import { NavLink } from "react-router-dom";
 import navConfig from "./NavConfig";
 import { useLocation, Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-
+import logo from "../../assets/react.svg";
 // custom
 type Props = {
   open: boolean;
@@ -24,13 +24,14 @@ export const drawerWidth = 220;
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
-  borderRight: "1.5px dashed rgba(145, 158, 171, 0.24)",
+  borderRight: "1.5px dashed #fff",
   transition: theme.transitions.create("width", {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen,
   }),
   overflowX: "hidden",
   zIndex: 10,
+  backgroundColor: "#182444",
 });
 
 const closedMixin = (theme: Theme): CSSObject => ({
@@ -52,7 +53,7 @@ const Drawer = styled(MuiDrawer, {
   flexShrink: 0,
   whiteSpace: "nowrap",
   boxSizing: "border-box",
-  borderRight: "#000000",
+  borderRight: "#fff",
   ...(open && {
     ...openedMixin(theme),
     "& .MuiDrawer-paper": openedMixin(theme),
@@ -70,6 +71,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: "center",
+  backgroundColor: "red",
 }));
 
 const SideBar = (props: Props) => {
@@ -81,14 +83,15 @@ const SideBar = (props: Props) => {
       <Stack direction={"column"} spacing={1} mt={1.8}>
         <DrawerHeader
           sx={{
-            borderBottom: "1.5px dashed rgba(145, 158, 171, 0.24)",
+            borderBottom: "1.5px dashed #fff",
             width: "100%",
             boxShadow: "10px",
+            backgroundColor: "#091023",
           }}
         >
           <NavLink to={"/"}>
             <Avatar
-              src={"user"}
+              src={logo}
               sx={{ width: 64, height: 64, position: "relative", top: "-5px" }}
               alt="img"
             />
@@ -99,16 +102,15 @@ const SideBar = (props: Props) => {
             {navConfig.map((i) =>
               i.title === "Divider" ? (
                 <ListItem key={uuidv4()} sx={{ display: "block" }}>
-                  <Divider sx={{ border: "1px dashed rgba(145, 158, 171, 0.24)" }} />
+                  <Divider sx={{ border: "1px dashed #fff" }} />
                 </ListItem>
               ) : (
                 <Link style={{ textDecoration: "none" }} to={i.path} key={uuidv4()}>
                   <ListItem
                     sx={{
                       transition: " 44554s ease-in",
-                      bgcolor: uRouter == i.keyrouter ? "rgb(230, 247, 255)" : "none",
-                      borderRight:
-                        uRouter == i.keyrouter ? "3.2px solid rgb(24, 144, 255)" : "azure",
+                      bgcolor: uRouter == i.keyrouter ? "#091023" : "none",
+                      borderRight: uRouter == i.keyrouter ? "3.2px solid #fff" : "azure",
                     }}
                     key={uuidv4()}
                     disablePadding
@@ -118,7 +120,7 @@ const SideBar = (props: Props) => {
                         sx={{
                           minWidth: 0,
                           justifyContent: "center",
-                          color: uRouter == i.keyrouter ? "rgb(24, 144, 255)" : "#444f59",
+                          color: uRouter == i.keyrouter ? "#acb6c4" : "#fff",
                           mr: 1.7,
                         }}
                       >
@@ -127,7 +129,7 @@ const SideBar = (props: Props) => {
                       <Typography
                         variant="subtitle1"
                         sx={{
-                          color: uRouter == i.keyrouter ? "rgb(24, 144, 255)" : "#444f59",
+                          color: uRouter == i.keyrouter ? "#acb6c4" : "#fff",
                           fontWeight: 600,
                         }}
                       >

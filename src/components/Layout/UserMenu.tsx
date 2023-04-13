@@ -87,7 +87,7 @@ export default function UserMenu() {
           alignItems="center"
           pt={0.3}
         >
-          <Typography color={"#000"}>Khan Academy</Typography>
+          <Typography color={"#fff"}>Khan Academy</Typography>
           <Typography variant="body2" color={"#9C9C9C"} fontWeight={500}>
             Учебный центр
           </Typography>
