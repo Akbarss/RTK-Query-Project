@@ -5,7 +5,7 @@ import { useGetProductsQuery } from "../core/redux/product.api";
 import ProductCard from "../components/Cards/ProductCard/ProductCard";
 
 const HomePage = () => {
-  const { data, isLoading, error } = useGetProductsQuery(6);
+  const { data, isLoading, error } = useGetProductsQuery(5);
 
   return (
     <Layout>

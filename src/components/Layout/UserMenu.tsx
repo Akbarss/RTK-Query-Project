@@ -85,12 +85,8 @@ export default function UserMenu() {
           direction={"column"}
           spacing={0.1}
           alignItems="center"
-          pt={0.3}
         >
-          <Typography color={"#fff"}>Khan Academy</Typography>
-          <Typography variant="body2" color={"#9C9C9C"} fontWeight={500}>
-            Учебный центр
-          </Typography>
+          <Typography color={"#fff"}>User Users</Typography>
         </Stack>
       </Box>
       <StyledMenu
