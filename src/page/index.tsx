@@ -12,7 +12,10 @@ const HomePage = () => {
       {isLoading ? (
         "Loading"
       ) : (
-        <>
+        <Stack direction={"column"} gap={3}>
+          <Typography fontSize={"28px"} fontWeight={600}>
+            All Products
+          </Typography>
           <Grid container spacing={3} mb={4}>
             {data?.map((p) => (
               <Grid key={p.id} item xs={12} sm={12} md={4}>
@@ -20,7 +23,7 @@ const HomePage = () => {
               </Grid>
             ))}
           </Grid>
-        </>
+        </Stack>
       )}
     </Layout>
   );

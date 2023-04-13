@@ -1,6 +1,6 @@
 import { Avatar, Box, Button, Card, Divider, Rating, Stack, Typography } from "@mui/material";
-import React from "react";
 import { IProducts } from "../../../core/types/product";
+import "../../../scss/product.scss";
 
 type Props = IProducts;
 
@@ -39,7 +39,11 @@ const ProductCard = (props: Props) => {
             </Typography>
           </Stack>
         </Box>
-        <Button variant="outlined" sx={{ border: "1px solid #182444", color: "#182444" }}>
+        <Button
+          variant="outlined"
+          sx={{ border: "1px solid #182444", color: "#182444" }}
+          className="btn-product"
+        >
           Add to Product
         </Button>
       </Stack>

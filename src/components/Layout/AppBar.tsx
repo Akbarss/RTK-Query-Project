@@ -7,6 +7,7 @@ import { Box, IconButton } from "@mui/material";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import { Stack } from "@mui/system";
 import React, { Suspense } from "react";
+import Iconify from "../Icon/Iconify";
 
 const UserMenu = React.lazy(() => import("../Layout/UserMenu"));
 
@@ -46,18 +47,19 @@ const Appbar = (props: AppBarProps) => {
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
-        {/* <Stack direction={"row"} alignItems="center">
-          <Box display={{ xs: "block", md: "block", mdP: "none" }}>
-            <MobileSideBar />
-          </Box>
-        </Stack> */}
-        <Stack direction={"row"} gap={1} alignItems="center" mt={-1}>
-          <IconButton size="large" edge="start" aria-label="menu" sx={{ color: "#06314D" }}>
-            <SettingsOutlinedIcon sx={{ color: "#fff" }} />
+        <Stack direction={"row"} gap={4} alignItems="center" mt={-1}>
+          <IconButton
+            size="large"
+            edge="start"
+            aria-label="menu"
+            sx={{ color: "#06314D", bgcolor: "#fff" }}
+            className="btn-shop"
+          >
+            <Iconify icon={"cib:shopify"} />
           </IconButton>
-          <Suspense fallback={"lloading"}>
+          {/* <Suspense fallback={"lloading"}>
             <UserMenu />
-          </Suspense>
+          </Suspense> */}
         </Stack>
       </Toolbar>
     </AppBar>
