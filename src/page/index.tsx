@@ -3,8 +3,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { Card, Grid, Stack, Typography } from "@mui/material";
 import { useGetProductsQuery } from "../core/redux/product.api";
 import ProductCard from "../components/Cards/ProductCard/ProductCard";
+import { IProducts } from "../core/types/product";
 
-const HomePage = () => {
+const HomePage = (props: { product: IProducts }) => {
   const { data, isLoading, error } = useGetProductsQuery(5);
 
   return (
@@ -19,7 +20,7 @@ const HomePage = () => {
           <Grid container spacing={3} mb={4}>
             {data?.map((p) => (
               <Grid key={p.id} item xs={12} sm={12} md={4}>
-                <ProductCard {...p} />
+                <ProductCard product={p} />
               </Grid>
             ))}
           </Grid>
