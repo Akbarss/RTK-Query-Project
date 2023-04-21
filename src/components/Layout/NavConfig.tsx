@@ -4,16 +4,16 @@ const getIcon = (name: string) => <Iconify icon={name} width={30} height={30} />
 
 const navConfig = [
   {
-    title: "Главная",
+    title: "All Products",
     path: "/",
     icon: getIcon("carbon:dashboard"),
     keyrouter: "",
   },
   {
-    title: "Активность",
-    path: "/activity",
-    icon: getIcon("mdi:clipboard-text-date-outline"),
-    keyrouter: "act",
+    title: "Users",
+    path: "/users",
+    icon: getIcon("clarity:users-solid-alerted"),
+    keyrouter: "use",
   },
   {
     title: "Divider",

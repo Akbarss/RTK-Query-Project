@@ -1,11 +1,10 @@
 import Layout from "../components/Layout";
 import "react-toastify/dist/ReactToastify.css";
-import { Card, Grid, Stack, Typography } from "@mui/material";
+import { Grid, Stack, Typography } from "@mui/material";
 import { useGetProductsQuery } from "../core/redux/product.api";
 import ProductCard from "../components/Cards/ProductCard/ProductCard";
-import { IProducts } from "../core/types/product";
 
-const HomePage = (props: { product: IProducts }) => {
+const HomePage = () => {
   const { data, isLoading, error } = useGetProductsQuery(5);
 
   return (
