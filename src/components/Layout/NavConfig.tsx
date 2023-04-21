@@ -16,6 +16,12 @@ const navConfig = [
     keyrouter: "use",
   },
   {
+    title: "Todo",
+    path: "/new",
+    icon: getIcon("wpf:todo-list"),
+    keyrouter: "new",
+  },
+  {
     title: "Divider",
     path: "null",
   },
